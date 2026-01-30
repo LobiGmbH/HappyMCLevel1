@@ -2,49 +2,149 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>HappyMC Access</title>
+<title>HappyMC • Official Shop</title>
 
 <style>
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    height: 100vh;
-    background: radial-gradient(circle at top, #020617, #000);
     font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(180deg, #020617, #000);
     color: #e5e7eb;
+}
+
+/* HEADER */
+header {
+    background: #020617;
+    padding: 20px 40px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #1e293b;
 }
 
-.card {
-    background: rgba(15, 23, 42, 0.95);
-    border-radius: 16px;
-    padding: 32px;
-    width: 380px;
-    box-shadow: 0 0 40px rgba(0,0,0,0.6);
-}
-
-h1 {
-    margin-top: 0;
+header h1 {
+    margin: 0;
     font-size: 26px;
+    color: #22c55e;
+}
+
+nav a {
+    color: #cbd5f5;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #22c55e;
+}
+
+/* HERO */
+.hero {
+    padding: 80px 40px;
     text-align: center;
+    background: radial-gradient(circle at top, #0f172a, #000);
+}
+
+.hero h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.85;
+}
+
+/* SHOP */
+.shop {
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.shop h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.item {
+    background: #0f172a;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.6);
+    transition: transform 0.2s;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+}
+
+.item h4 {
+    margin-top: 0;
+    color: #38bdf8;
+}
+
+.item p {
+    font-size: 14px;
+    opacity: 0.85;
 }
 
 .price {
-    text-align: center;
     font-size: 20px;
-    margin-bottom: 25px;
+    margin: 15px 0;
+    color: #22c55e;
+}
+
+.buy {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #22c55e, #4ade80);
+    color: #052e16;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.buy:hover {
+    opacity: 0.9;
+}
+
+/* CHECKOUT */
+.checkout {
+    margin-top: 60px;
+    background: #020617;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.checkout h4 {
+    text-align: center;
+    margin-top: 0;
 }
 
 .field {
-    margin-bottom: 16px;
+    margin-bottom: 15px;
 }
 
 .field label {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 14px;
-    opacity: 0.8;
+    font-size: 13px;
+    opacity: 0.7;
 }
 
 .field input {
@@ -54,72 +154,98 @@ h1 {
     border: none;
     background: #020617;
     color: white;
-    font-size: 15px;
 }
 
-button {
+/* THE CHALLENGE 😏 */
+.continue {
     width: 100%;
     padding: 14px;
-    border-radius: 12px;
+    border-radius: 14px;
     border: none;
-    font-size: 16px;
-    margin-top: 10px;
-    transition: 0.2s;
-}
-
-.buy {
-    background: linear-gradient(135deg, #22c55e, #4ade80);
-    color: #052e16;
-    cursor: pointer;
-}
-
-.buy:hover {
-    transform: scale(1.03);
-}
-
-.next {
     background: #334155;
     color: #94a3b8;
+    font-size: 16px;
     cursor: not-allowed;
 }
 
-.footer {
+/* FOOTER */
+footer {
     text-align: center;
+    padding: 30px;
     font-size: 12px;
-    opacity: 0.5;
-    margin-top: 20px;
+    opacity: 0.4;
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
-    <h1>HappyMC Zugang</h1>
-    <div class="price">Preis: <strong>4,99 €</strong></div>
+<header>
+    <h1>HappyMC</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Vote</a>
+        <a href="#">Discord</a>
+    </nav>
+</header>
 
-    <div class="field">
-        <label>Benutzername</label>
-        <input placeholder="Dein Benuzername">
+<section class="hero">
+    <h2>Welcome to HappyMC</h2>
+    <p>Der offizielle Shop für Ränge, Coins & Extras</p>
+</section>
+
+<section class="shop">
+    <h3>Shop</h3>
+
+    <div class="items">
+        <div class="item">
+            <h4>VIP Rang</h4>
+            <p>Mehr Homes, farbiger Chat, /fly (Spawn)</p>
+            <div class="price">4,99 €</div>
+            <button class="buy">Kaufen</button>
+        </div>
+
+        <div class="item">
+            <h4>MVP Rang</h4>
+            <p>Alle VIP Features + Partikel & Nick</p>
+            <div class="price">9,99 €</div>
+            <button class="buy">Kaufen</button>
+        </div>
+
+        <div class="item">
+            <h4>Coins Paket</h4>
+            <p>10.000 Coins für den Server-Shop</p>
+            <div class="price">2,99 €</div>
+            <button class="buy">Kaufen</button>
+        </div>
     </div>
 
-    <div class="field">
-        <label>E-Mail</label>
-        <input placeholder="Deine Emailadresse">
+    <div class="checkout">
+        <h4>Checkout</h4>
+
+        <div class="field">
+            <label>Ingame-Name</label>
+            <input placeholder="Steve">
+        </div>
+
+        <div class="field">
+            <label>E-Mail</label>
+            <input placeholder="steve@minecraft.net">
+        </div>
+
+        <!-- 🔍 Irgendwo hier ist der Schlüssel -->
+        <button class="continue"
+            disabled
+            onclick="window.location.href='https://sites.google.com/view/happymc/shop'">
+            Weiter zur Bezahlung
+        </button>
     </div>
+</section>
 
-    <button class="buy">Kaufen</button>
-
-    <button class="next"
-        disabled
-        onclick="window.location.href='https://sites.google.com/view/happymc/shop'">
-        Weiter
-    </button>
-
-    <div class="footer">
-        HappyMC Secure Checkout
-    </div>
-</div>
+<footer>
+    © 2026 HappyMC • Not affiliated with Mojang
+</footer>
 
 </body>
 </html>
